@@ -13,7 +13,7 @@ const count = ref<number>()
 const router = useRouter()
 
 const getCouponList = async () => {
-  const res = await axios.get('http://107.151.202.137:5000/coupon')
+  const res = await axios.get('https://api.fdrfu.cn/coupon')
   list.value = res.data
 }
 
@@ -27,7 +27,7 @@ const getQrcode = (id: string) => {
 
 const generate = async () => {
   if (count.value && count.value > 0) {
-    const res = await axios.post('http://107.151.202.137:5000/coupon', {
+    const res = await axios.post('https://api.fdrfu.cn/coupon', {
       count: count.value,
     })
     if (res.data.msg === 'success') {

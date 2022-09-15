@@ -11,7 +11,7 @@ interface ICoupon {
 const item = ref<ICoupon>()
 
 onMounted(async () => {
-  const res = await axios.get(`http://107.151.202.137:5000/coupon/${props.id}`)
+  const res = await axios.get(`https://api.fdrfu.cn/coupon/${props.id}`)
   item.value = res.data
 })
 </script>

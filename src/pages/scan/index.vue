@@ -7,7 +7,7 @@ const camera = ref('auto')
 const showScanConfirmation = ref(false)
 
 async function check(id: string) {
-  const res = await axios.post('http://107.151.202.137:5000/coupon/check', {
+  const res = await axios.post('https://api.fdrfu.cn/coupon/check', {
     coupon_uuid: id,
   })
   if (res.data.msg === 'success')
