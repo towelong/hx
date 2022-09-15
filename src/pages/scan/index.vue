@@ -32,7 +32,8 @@ async function onDecode(content: string) {
   // pause()
   showScanConfirmation.value = true
   await check(content)
-  // await timeout(1500)
+  pause()
+  await timeout(300)
   unpause()
   showScanConfirmation.value = false
 }
@@ -41,15 +42,15 @@ function unpause() {
   camera.value = 'auto'
 }
 
-// function pause() {
-//   camera.value = 'off'
-// }
+function pause() {
+  camera.value = 'off'
+}
 
-// function timeout(ms: number) {
-//   return new Promise((resolve) => {
-//     window.setTimeout(resolve, ms)
-//   })
-// }
+function timeout(ms: number) {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, ms)
+  })
+}
 </script>
 
 <template>
